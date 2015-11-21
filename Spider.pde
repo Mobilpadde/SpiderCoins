@@ -49,17 +49,17 @@ class Spider{
     acceleration.add(movementVector);
     velocity.add(acceleration);
     velocity.limit(0.5);
-    //velocity.x = constrain(velocity.x, -0.5, 0.5);
-    //velocity.y = constrain(velocity.y, -0.5, 0.5);
+    
+    //if(movement.get("up") == 0 && movement.get("down") == 0) velocity.y = 0;
+    //if(movement.get("left") == 0 && movement.get("right") == 0) velocity.x = 0;
     
     location.add(velocity);
     
-    //velocity.mult(0);
     acceleration.mult(0);
   }
   
   void KeepInView(){
-    location.x = constrain(location.x, 0, width);
-    location.y = constrain(location.y, 0, height);
+    location.x = constrain(location.x, size / 2, width - size / 2);
+    location.y = constrain(location.y, size / 2, height - size / 2);
   }
 }

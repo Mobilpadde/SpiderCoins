@@ -35,8 +35,8 @@ class Coin{
   }
   
   void KeepInView(){
-    location.x = constrain(location.x, 0, width);
-    location.y = constrain(location.y, 0, height);
+    location.x = constrain(location.x, size / 2, width - size / 2);
+    location.y = constrain(location.y, size / 2, height - size / 2);
   }
   
   boolean PickUp(PVector spider){

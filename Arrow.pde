@@ -30,9 +30,9 @@ class Arrow{
     popMatrix();
     
     PVector fakeWind = wind.copy();
-    fakeWind.x *= -1;
+    fakeWind.y *= -1;
+    fakeWind.normalize();
     PVector lerpTo = PVector.sub(fakeWind, new PVector()); 
-    lerpTo.normalize();
     aT.lerpTo = lerpTo;
   }
 }

@@ -12,6 +12,7 @@ class Wind{
   
   void Update(){
     wind = new PVector(map(noise(frameCount), 0, 1, min, max), map(noise(frameCount), 0, 1, min, max));
+    wind = new PVector(map(mouseX, 0, width, min, max), map(mouseY, 0, width, min, max));
     arrow.SetWind(wind.copy());
   }
   
